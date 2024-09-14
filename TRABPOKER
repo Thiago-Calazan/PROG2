@@ -1,0 +1,73 @@
+/**************************************************
+*
+* Nome do(a) estudante: Thiago Calazan Benites
+* Trabalho 1
+* Professor(a): Diego Padilha Rubert
+*
+*/
+#include <stdio.h>
+
+typedef enum {
+  COPAS = 'C',
+  ESPADAS = 'E',
+  OUROS = 'O',
+  PAUS = 'P'
+} t_naipe;
+
+typedef struct {
+  short valor;
+  t_naipe naipe;
+} t_carta;
+
+typedef enum {
+  PAR = 15,
+  DOISPARES,
+  TRINCA,
+  SEQUENCIA,
+  FLUSH,
+  FULL,
+  QUADRA,
+  SFLUSH,
+  RFLUSH
+} t_valor_m;
+
+typedef struct {
+  t_carta cartas[5];
+  t_valor_m valor;
+} t_mao;
+
+void troca(int *a, int *b){
+  int aux;
+  aux = *a;
+  *a = *b;
+  *b = aux;
+}
+
+void ordenaselection(int a, int v[5]){
+
+  int x, y, min;
+  for(x = 0; x < y - 1; x++) 
+    min = x;
+    for (y = x+1; y < n; y++)
+      if (v[y] < v[min])
+        min = y;
+  troca(&v[x], &v[min]);
+  }
+}
+
+
+
+int main(){
+
+  t_carta cartas[10];
+  int nRodadas;
+  scanf("%d", &N);
+
+  for(int i = 0; i < nRodadas; i++)
+    for(int j = 0; j < 10; j++)
+      scanf("%d %c", &cartas[j].valor, &cartas[j].naipe);
+
+  if(cartas[0] && cartas[1] && cartas[2] && cartas[3] && cartas[4])
+    
+  
+}
