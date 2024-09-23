@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 /**************************************************
 *
 * Nome do(a) estudante: Thiago Calazan Benites
@@ -5,7 +8,7 @@
 * Professor(a): Diego Padilha Rubert
 *
 */
-#include <stdio.h>
+
 
 typedef enum {
   COPAS = 'C',
@@ -43,17 +46,19 @@ void troca(int *a, int *b){
   *b = aux;
 }
 
-void ordenaselection(int a, int v[5]){
-
+void ordenaValorCarta(int a, int v[5]){
   int x, y, min;
-  for(x = 0; x < y - 1; x++) 
+  for(x = 0; x < a - 1; x++) {
     min = x;
-    for (y = x+1; y < n; y++)
-      if (v[y] < v[min])
+    for (y = x + 1; y < a; y++) {
+      if (v[y] < v[min]) {
         min = y;
-  troca(&v[x], &v[min]);
+      }
+    }
+    troca(&v[x], &v[min]);
   }
 }
+
 
 
 
@@ -61,13 +66,13 @@ int main(){
 
   t_carta cartas[10];
   int nRodadas;
-  scanf("%d", &N);
+  scanf("%d", &nRodadas);
 
   for(int i = 0; i < nRodadas; i++)
     for(int j = 0; j < 10; j++)
-      scanf("%d %c", &cartas[j].valor, &cartas[j].naipe);
+        scanf("%d %c", &cartas[j].valor, &cartas[j].naipe);
+        ordenaValorCarta(5, cartas);
 
-  if(cartas[0] && cartas[1] && cartas[2] && cartas[3] && cartas[4])
-    
-  
+  t_carta mao1[] = cartas[0],cartas[1], cartas[2], cartas[3], cartas[4];
+
 }
