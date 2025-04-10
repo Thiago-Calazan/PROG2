@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		Carro car1 = new Carro(sc.next(), sc.next(), sc.next(), sc.nextInt());
+		System.out.println(car1);
+		
+		car1.acelerar();
+		car1.frear();
+		
+		Moto moto1 = new Moto(sc.next(), sc.next(), sc.next(), sc.nextDouble());
+		System.out.println(moto1);
+		
+		String novacor = sc.next();
+		moto1.setCor(novacor);
+		System.out.println(moto1);
+		
+	}
+
+}
+
+class Veiculo {
+	private String marca;
+	private String modelo;
+	private String cor;
+	
+	public Veiculo(String marca, String modelo, String cor) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cor = cor;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+	
+	public String toString() {
+		return getMarca()+": "+getModelo()+" "+getCor();	}
+}
+
+class Carro extends Veiculo {
+	
+	private int numPortas;
+
+	public Carro(String marca, String modelo, String cor, int numPortas) {
+		super(marca, modelo, cor);
+		this.numPortas = numPortas;
+	}
+
+	public int getNumPortas() {
+		return numPortas;
+	}
+
+	public void setNumPortas(int numPortas) {
+		this.numPortas = numPortas;
+	}
+	
+	public void acelerar() {
+		System.out.println("O "+super.toString()+" acelerou");
+	}
+	
+	public void frear() {
+		System.out.println("O "+super.toString()+" freou");
+	}
+	
+	public String toString() {
+		return "Carro "+super.toString()+ " numPortas=" +getNumPortas();
+	}
+
+}
+
+class Moto extends Veiculo {
+	
+	private double tamCorrente;
+
+	public Moto(String marca, String modelo, String cor, double tamCorrente) {
+		super(marca, modelo, cor);
+		// TODO Auto-generated constructor stub
+		this.tamCorrente = tamCorrente;
+	}
+
+	public double getTamCorrente() {
+		return tamCorrente;
+	}
+
+	public void setTamCorrente(double tamCorrente) {
+		this.tamCorrente = tamCorrente;
+	}
+
+	public String toString() {
+		return "Moto "+super.toString()+" tamCorrente "+getTamCorrente();
+	}
+}
